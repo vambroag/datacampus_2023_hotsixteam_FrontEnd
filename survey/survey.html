@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="background">
+    <div class="background" id="background">
         <form class="form_win" id="form_win" method="post">
             <div class="window">
                 <div class="toparea_v1" id="toparea_v1">
@@ -647,23 +647,23 @@
                     <div class="question_container_v5">
                         <input class="question_v5" id="q_medicine1" type="text" value="해당 사항 없습니다" readonly
                             style="margin-top: 0px;"></input>
-                        <input class="question_v5" id="q_medicine2" type="text" value="발진" readonly></input>
-                        <input class="question_v5" id="q_medicine3" type="text" value="안구 건조증" readonly></input>
-                        <input class="question_v5" id="q_medicine4" type="text" value="체중이 급격히 빠짐" readonly></input>
-                        <input class="question_v5" id="q_medicine5" type="text" value="발가락 저림" readonly></input>
-                        <input class="question_v5" id="q_medicine6" type="text" value="혈뇨/혈변" readonly></input>
-                        <input class="question_v5" id="q_medicine7" type="text" value="메스꺼움" readonly></input>
-                        <input class="question_v5" id="q_medicine8" type="text" value="식욕 상실" readonly></input>
-                        <input class="question_v5" id="q_medicine9" type="text" value="홍조" readonly></input>
-                        <input class="question_v5" id="q_medicine10" type="text" value="기억력 저하" readonly></input>
-                        <input class="question_v5" id="q_medicine11" type="text" value="해당 사항 없습니다" readonly></input>
-                        <input class="question_v5" id="q_medicine12" type="text" value="발진" readonly></input>
-                        <input class="question_v5" id="q_medicine13" type="text" value="안구 건조증" readonly></input>
-                        <input class="question_v5" id="q_medicine14" type="text" value="체중이 급격히 빠짐" readonly></input>
-                        <input class="question_v5" id="q_medicine15" type="text" value="발가락 저림" readonly></input>
-                        <input class="question_v5" id="q_medicine16" type="text" value="혈뇨/혈변" readonly></input>
-                        <input class="question_v5" id="q_medicine17" type="text" value="메스꺼움" readonly></input>
-                        <input class="question_v5" id="q_medicine18" type="text" value="식욕 상실" readonly
+                        <input class="question_v5" id="q_medicine2" type="text" value="동맥 경화약" readonly></input>
+                        <input class="question_v5" id="q_medicine3" type="text" value="위장약" readonly></input>
+                        <input class="question_v5" id="q_medicine4" type="text" value="고지혈증약" readonly></input>
+                        <input class="question_v5" id="q_medicine5" type="text" value="류마티스  관절염약" readonly></input>
+                        <input class="question_v5" id="q_medicine6" type="text" value="골다공증약" readonly></input>
+                        <input class="question_v5" id="q_medicine7" type="text" value="당뇨약" readonly></input>
+                        <input class="question_v5" id="q_medicine8" type="text" value="고혈압약" readonly></input>
+                        <input class="question_v5" id="q_medicine9" type="text" value="아스피린" readonly></input>
+                        <input class="question_v5" id="q_medicine10" type="text" value="알러지약" readonly></input>
+                        <input class="question_v5" id="q_medicine11" type="text" value="아토피약" readonly></input>
+                        <input class="question_v5" id="q_medicine12" type="text" value="경구 피임약" readonly></input>
+                        <input class="question_v5" id="q_medicine13" type="text" value="진통 소염제" readonly></input>
+                        <input class="question_v5" id="q_medicine14" type="text" value="이뇨제" readonly></input>
+                        <input class="question_v5" id="q_medicine15" type="text" value="면역 억제제" readonly></input>
+                        <input class="question_v5" id="q_medicine16" type="text" value="결핵 치료제" readonly></input>
+                        <input class="question_v5" id="q_medicine17" type="text" value="항전간제" readonly></input>
+                        <input class="question_v5" id="q_medicine18" type="text" value="항경련제" readonly
                             style="margin-bottom:0px;"></input>
                         <input id="q_medicine" name="q_medicine" value=0 type="number" style="display:none;">
                     </div>
@@ -771,26 +771,26 @@
             $('form').on('submit', function (event) {
                 event.preventDefault();
                 // It returns a array of object 
-
-
                 let userinfo = $(this).serializeArray();
-                let user = {};
+                let userdata = {};
                 userinfo.forEach((value) => {
                     // Dynamically create an object
-                    user[value.name] = value.value;
+                    userdata[value.name] = value.value;
                 });
-                console.log(user);
+                console.log(userdata);
+                document.getElementById("background").style.display = "none";
                 let url = "https://reqres.in/api/users";
                 $.ajax({
                     method: "POST",
                     url: url,
-                    data: user
+                    data: userdata
                 }).done(function (msg) {
-
                     // When the request is successful
-                    location.href="../result/kalium/kalium.html";
+                    //location.href="../result/kalium/kalium.html";
                 }).fail(function (err, textstatus, error) {
-                    $('span').text(textstatus);
+                    //$('span').text(textstatus);
+                    alert(textstatus);
+                    location.href='../index.html';
                 });
 
             });

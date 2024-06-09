@@ -437,13 +437,13 @@ body {
     margin: 0;
 }
 
-@media only screen and (max-height: 2835px) {
+@media only screen and (max-height: 3292px) {
     .html {
-        height: 2836px;
+        height: 3292px;
     }
 
     .body {
-        height: 100%;
+        height: 3292px;
     }
 
 

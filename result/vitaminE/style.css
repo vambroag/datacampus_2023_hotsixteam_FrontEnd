@@ -437,13 +437,13 @@ body {
     margin: 0;
 }
 
-@media only screen and (max-height: 2835px) {
+@media only screen and (max-height: 3140px) {
     .html {
-        height: 2836px;
+        height: 3140px;
     }
 
     .body {
-        height: 100%;
+        height: 3140px;
     }
 
 
@@ -567,7 +567,7 @@ body {
         position: absolute;
         width: 100%;
         height: auto;
-        top: 2637px;
+        top: 2491px;
         font-family: 'Pretendard';
         font-style: normal;
         font-weight: 900;

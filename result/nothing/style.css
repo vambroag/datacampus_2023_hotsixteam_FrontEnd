@@ -369,8 +369,8 @@ body {
 }
 
 .recommend1_name {
-    width: 87px;
-    height: 24px;
+    width: 101px;
+    height: auto;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 900;
@@ -395,8 +395,8 @@ body {
 }
 
 .recommend2_name {
-    width: 83px;
-    height: 24px;
+    width: 101px;
+    height: auto;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 900;
@@ -421,11 +421,8 @@ body {
 }
 
 .recommend3_name {
-    /* position: absolute;
-    left: 13%;
-    top: 20%; */
-    width: 83px;
-    height: 36px;
+    width: 101px;
+    height: auto;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 900;
@@ -506,13 +503,13 @@ body {
     margin: 0px;
 }
 
-@media only screen and (max-height: 2835px) {
+@media only screen and (max-height: 2109px) {
     .html {
-        height: 2836px;
+        height: 2109px;
     }
 
     .body {
-        height: 100%;
+        height: 2109px;
     }
 
 
@@ -621,7 +618,7 @@ body {
         position: absolute;
         width: 100%;
         height: auto;
-        top: 1460px;
+        top: 885px;
         font-family: 'Pretendard';
         font-style: normal;
         font-weight: 900;
@@ -636,7 +633,7 @@ body {
         position: absolute;
         width: 100%;
         height: auto;
-        top: 2637px;
+        top: 1454px;
         font-family: 'Pretendard';
         font-style: normal;
         font-weight: 900;

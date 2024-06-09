@@ -225,11 +225,11 @@ man.addEventListener("click", () => {
         bgwhitecblue(woman);
         man_status = 1;
         woman_status = 0;
-        gender = 1;
+        gender.value = 1;
     } else if (man_status == 1) {
         bgwhitecblue(man);
         man_status = 0;
-        gender = 0;
+        gender.value = 0;
     }
 });
 
@@ -239,11 +239,11 @@ woman.addEventListener("click", () => {
         bgbluecwhite(woman);
         woman_status = 1;
         man_status = 0;
-        gender = 2;
+        gender.value = 2;
     } else if (woman_status == 1) {
         bgwhitecblue(woman);
         woman_status = 0;
-        gender = 0;
+        gender.value = 0;
     }
 });
 
@@ -503,7 +503,7 @@ backbutton8.addEventListener("click", () => {
 });
 
 gobutton8.addEventListener("click", () => {
-    if (q_drink === 0) {
+    if (q_drink.value === 0) {
         alert('선택해주세요.');
     } else {
         bottomarea8.style.height = "0px";
@@ -537,11 +537,11 @@ q_drink1.addEventListener("click", () => {
         q_drink3_status = 0;
         q_drink4_status = 0;
         q_drink5_status = 0;
-        q_drink = 1;
+        q_drink.value = 1;
     } else if (q_drink1_status == 1) {
         bgwhitecblue(q_drink1);
         q_drink1_status = 0;
-        q_drink = 0;
+        q_drink.value = 0;
     }
 });
 
@@ -557,11 +557,11 @@ q_drink2.addEventListener("click", () => {
         q_drink3_status = 0;
         q_drink4_status = 0;
         q_drink5_status = 0;
-        q_drink = 2;
+        q_drink.value = 2;
     } else if (q_drink2_status == 1) {
         bgwhitecblue(q_drink2);
         q_drink2_status = 0;
-        q_drink = 0;
+        q_drink.value = 0;
     }
 });
 
@@ -577,11 +577,11 @@ q_drink3.addEventListener("click", () => {
         q_drink2_status = 0;
         q_drink4_status = 0;
         q_drink5_status = 0;
-        q_drink = 3;
+        q_drink.value = 3;
     } else if (q_drink3_status == 1) {
         bgwhitecblue(q_drink3);
         q_drink3_status = 0;
-        q_drink = 0;
+        q_drink.value = 0;
     }
 });
 
@@ -597,11 +597,11 @@ q_drink4.addEventListener("click", () => {
         q_drink2_status = 0;
         q_drink3_status = 0;
         q_drink5_status = 0;
-        q_drink = 4;
+        q_drink.value = 4;
     } else if (q_drink4_status == 1) {
         bgwhitecblue(q_drink4);
         q_drink4_status = 0;
-        q_drink = 0;
+        q_drink.value = 0;
     }
 });
 
@@ -617,11 +617,11 @@ q_drink5.addEventListener("click", () => {
         q_drink2_status = 0;
         q_drink3_status = 0;
         q_drink4_status = 0;
-        q_drink = 5;
+        q_drink.value = 5;
     } else if (q_drink5_status == 1) {
         bgwhitecblue(q_drink5);
         q_drink5_status = 0;
-        q_drink = 0;
+        q_drink.value = 0;
     }
 });
 

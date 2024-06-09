@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>결과화면</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         // function goToNextPage() {
         //     var nicknameField = document.querySelector('.weight_container');
@@ -30,7 +31,7 @@
             <p class="q_text2">안구건조증왔지니</p>
             <img src="../../img/vitaminA_pic.png" alt="사진티콘" class="Jinee">
             <h3 class="user" id="user">???님의</p>
-                <h2 class="how_much">비타민A 섭취량은 500mg</h2>
+                <h2 class="how_much" id="how_much">비타민A 섭취량은 500mg</h2>
                 <h3 class="expect">예상됩니다</h3>
                 <div class="symptom_container">
                     <h4 class="symptom">비타민A 결핍 증상</h4>
@@ -118,9 +119,25 @@
     </div>
     </div>
     <script type="text/javascript">
-        let nickname = localStorage.getItem("nickname");
-        let string1 = nickname + "님의";
-        document.getElementById("user").innerText = string1;
+        $(document).ready(function () {
+            function GetParameterValues(param) {
+                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < url.length; i++) {
+                    var urlparam = url[i].split('=');
+                    if (urlparam[0] == param) {
+                        return urlparam[1];
+                    }
+                }
+            }
+
+            var pname = GetParameterValues('nickname');
+            var consume = GetParameterValues('mg');
+
+            let string1 = pname + "님의";
+            let string2 = "비타민A 섭취량은" + consume + "mg"
+            document.getElementById("user").innerText = string1;
+            document.getElementById("how_much").innerText = string2;
+        });
     </script>
 </body>
 

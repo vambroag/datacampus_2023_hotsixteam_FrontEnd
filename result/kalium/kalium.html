@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>결과화면</title>
     <link href="style.css" rel="stylesheet" type="text/css">
     <script>
@@ -30,7 +31,7 @@
             <p class="q_text2">방전됐지니</p>
             <img src="../../img/kalium_pic.png" alt="사진티콘" class="Jinee">
             <h3 class="user" id="user">???님의</p>
-                <h2 class="how_much">칼륨 섭취량은 500mg</h2>
+                <h2 class="how_much" id="how_much">칼륨 섭취량은 500mg</h2>
                 <h3 class="expect">예상됩니다</h3>
                 <div class="symptom_container">
                     <h4 class="symptom">칼륨 결핍 증상</h4>
@@ -76,35 +77,51 @@
                 </div>
 
 
-                    <div class="recommend_name">
-                        <div class="recommend1_name_container">
-                            <h3 class="recommend1_name">Life-flo<br>액상 요오드 플러스</h3>
-                        </div>
-                        <div class="recommend2_name_container">
-                            <h3 class="recommend2_name">21st Century<br>글루콘산칼륨</h3>
-                        </div>
-                        <div class="recommend3_name_container">
-                            <h3 class="recommend3_name">NOW Foods<br>구연산칼륨</h3>
-                        </div>
+                <div class="recommend_name">
+                    <div class="recommend1_name_container">
+                        <h3 class="recommend1_name">Life-flo<br>액상 요오드 플러스</h3>
                     </div>
-
+                    <div class="recommend2_name_container">
+                        <h3 class="recommend2_name">21st Century<br>글루콘산칼륨</h3>
+                    </div>
+                    <div class="recommend3_name_container">
+                        <h3 class="recommend3_name">NOW Foods<br>구연산칼륨</h3>
+                    </div>
                 </div>
 
-                <div class="yes_or_no">
-                    <h4 class="T_F">증상이 맞는 것 같나요?</h4>
-                <div class="yes_button"  onclick="location.href = '../../index.html';">
-                    <p class="yes">Yes</p>
-                </div>
-                <div class="no_button"  onclick="location.href = '../../index.html';">
-                    <p class="no">No</p>
-                </div>
+        </div>
+
+        <div class="yes_or_no">
+            <h4 class="T_F">증상이 맞는 것 같나요?</h4>
+            <div class="yes_button">
+                <p class="yes">Yes</p>
+            </div>
+            <div class="no_button">
+                <p class="no">No</p>
             </div>
         </div>
     </div>
+    </div>
     <script type="text/javascript">
-        let nickname = localStorage.getItem("nickname");
-        let string1 = nickname + "님의";
-        document.getElementById("user").innerText = string1;
+        $(document).ready(function () {
+            function GetParameterValues(param) {
+                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < url.length; i++) {
+                    var urlparam = url[i].split('=');
+                    if (urlparam[0] == param) {
+                        return urlparam[1];
+                    }
+                }
+            }
+
+            var pname = GetParameterValues('nickname');
+            var consume = GetParameterValues('mg');
+
+            let string1 = pname + "님의";
+            let string2 = "칼륨 섭취량은" + consume + "mg"
+            document.getElementById("user").innerText = string1;
+            document.getElementById("how_much").innerText = string2;
+        });
     </script>
 </body>
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>결과화면</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         // function goToNextPage() {
         //     var nicknameField = document.querySelector('.weight_container');
@@ -46,9 +47,22 @@
     </div>
     </div>
     <script type="text/javascript">
-        let nickname = localStorage.getItem("nickname");
-        let string1 = nickname + "님의";
-        document.getElementById("user").innerText = string1;
+        $(document).ready(function () {
+            function GetParameterValues(param) {
+                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < url.length; i++) {
+                    var urlparam = url[i].split('=');
+                    if (urlparam[0] == param) {
+                        return urlparam[1];
+                    }
+                }
+            }
+
+            var pname = GetParameterValues('nickname');
+
+            let string1 = pname + "님의";
+            document.getElementById("user").innerText = string1;
+        });
     </script>
 </body>
 
